@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="w-full  ">
+    <div className="w-full ">
       <nav className="max-w-[1440px] mx-auto flex   justify-between items-center">
         <Link
           href="/"
@@ -11,6 +11,7 @@ const Header = () => {
         >
           <span className="">SunLLeT</span>
         </Link>
+        
 
         <div className="">
           <select className="bg-black text-white" name="network" id="network">
