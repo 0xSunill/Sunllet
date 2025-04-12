@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "@/components/Header";
+import Generate from "@/components/Generate";
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
       </div>
 
       <div>
-        <div>hello</div>
+        <div>
+          <Generate />
+        </div>
       </div>
     </main>
   );
