@@ -11,10 +11,10 @@ const Header = () => {
         >
           <span className="">SunLLeT</span>
         </Link>
-        
+
 
         <div className="">
-          <select className="bg-black text-white" name="network" id="network">
+          <select className="bg-black  text-white" name="network" id="network">
             <option value="sol">Solana</option>
             <option value="eth">Ethereum</option>
             <option value="sui">Sui</option>
