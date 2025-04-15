@@ -6,7 +6,7 @@ const SecretPhraseDisplay = ({ mnemonic = [] }) => {
     ? mnemonic
     : mnemonic?.split(" ") || [];
   const [isExpanded, setIsExpanded] = useState(false);
-  // console.log(mnemonic);
+  console.log(mnemonic);
   const handleCopy = () => {
     if (mnemonic.length === 0) return;
     navigator.clipboard.writeText(phrase.join(" "));
