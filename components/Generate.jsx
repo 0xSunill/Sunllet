@@ -68,17 +68,17 @@ const Generate = () => {
           <h1 className="text-5xl font-bold mb-6">
             Enter Secret Recovery Phrase
           </h1>
-          <div className="flex items-center space-x-4 bg-black p-4 rounded-md">
+          <div className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0">
             <input
               type="text"
-              className="mt-1 w-full px-4 py-4 border rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-500"
+              className="w-full px-4 py-4 border rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-500"
               placeholder="Enter Secret Recovery Phrase or click generate"
               value={inputMnemonic}
               onChange={(e) => setInputMnemonic(e.target.value)}
             />
             <button
               type="button"
-              className="px-4 py-4 w-full max-w-[200px] bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition duration-200"
+              className="px-4 py-4 w-full md:max-w-[200px] bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition duration-200"
               onClick={async () => {
                 const mn = inputMnemonic.trim();
                 const valid = mn.split(" ").length === 12;
@@ -93,7 +93,7 @@ const Generate = () => {
             </button>
             <button
               type="button"
-              className="px-4 py-4 w-full max-w-[200px] bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition duration-200"
+              className="px-4 py-4 w-full md:max-w-[200px] bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition duration-200"
               onClick={async () => {
                 const mn = await generateMnemonic();
                 setMnemonic(mn);
