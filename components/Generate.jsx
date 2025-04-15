@@ -1,17 +1,23 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import SecretPhraseDisplay from "./Phrase";
 
+import { generateMnemonic } from "bip39";
+
 const Generate = () => {
-  const [generate, setGenerate] = useState(true);
-  const [mnemonic, setMnemonic] = useState("");
-  return ( 
+  const [generate, setGenerate] = useState(false);
+  const [mnemonic, setMnemonic] = useState([]);
+  // useEffect(() => {
+  //   if (mnemonic) {
+  //     console.log("Mnemonic from state:", mnemonic);
+  //   }
+  // }, [mnemonic]);
+  return (
     <div className="p-6 text-white ">
-      
       {generate ? (
         <div>
-          <SecretPhraseDisplay />
+          <SecretPhraseDisplay mnemonic={mnemonic} />
 
           <h2 className="text-4xl font-bold">Solana Wallet</h2>
           <div className="mt-4 flex space-x-4">
@@ -61,9 +67,14 @@ const Generate = () => {
               placeholder="Enter Secret Recovery Phrase or add to create new"
             />
             <button
-              type="submit"
+              type="button"
               className="px-4 py-4 w-full max-w-[200px] bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition duration-200"
-              onClick={() => setGenerate(true)}
+              onClick={async () => {
+                const mn = await generateMnemonic();
+                // console.log(mn);
+                setMnemonic(mn);
+                setGenerate(true);
+              }}
             >
               Generate Wallet
             </button>

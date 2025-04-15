@@ -1,24 +1,14 @@
 "use client";
 import React, { useState } from "react";
 
-const SecretPhraseDisplay = () => {
+const SecretPhraseDisplay = ({ mnemonic = [] }) => {
+  const phrase = Array.isArray(mnemonic)
+    ? mnemonic
+    : mnemonic?.split(" ") || [];
   const [isExpanded, setIsExpanded] = useState(false);
-  const phrase = [
-    "mother",
-    "cherry",
-    "collect",
-    "damage",
-    "senior",
-    "echo",
-    "reflect",
-    "explain",
-    "maximum",
-    "pistol",
-    "nothing",
-    "inspire",
-  ];
-
+  // console.log(mnemonic);
   const handleCopy = () => {
+    if (mnemonic.length === 0) return;
     navigator.clipboard.writeText(phrase.join(" "));
     alert("Secret phrase copied!");
   };
