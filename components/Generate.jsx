@@ -11,7 +11,7 @@ import bs58 from "bs58";
 const Generate = () => {
   const [generate, setGenerate] = useState(false);
   const [mnemonic, setMnemonic] = useState("");
-  const [inputMnemonic, setInputMnemonic] = useState(""); // 👈 new state for input field
+  const [inputMnemonic, setInputMnemonic] = useState("");
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [wallets, setWallets] = useState([]);
